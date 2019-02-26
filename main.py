@@ -1,7 +1,9 @@
 import requests
 import sqlite3
+from requests.auth import HTTPBasicAuth
 try:
     # test url site
+    # auth = () - use env variables
     payload = {}
     url = 'https://jsonplaceholder.typicode.com/comments'
     url_json = requests.get(url, payload).json()
