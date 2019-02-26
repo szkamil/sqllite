@@ -3,7 +3,7 @@ import sqlite3
 try:
     # test url site
     # check if request paging is required
-    # check c impl of sqllite hooks
+    # check c impl of sqlite hooks
     payload = {}
     url = 'https://jsonplaceholder.typicode.com/comments'
     url_json = requests.get(url, payload).json()
