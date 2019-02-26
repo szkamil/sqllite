@@ -2,16 +2,14 @@ import requests
 import sqlite3
 try:
     # test url site
-    # check if request paging is required
-    # check c impl of sqlite hooks
     payload = {}
     url = 'https://jsonplaceholder.typicode.com/comments'
     url_json = requests.get(url, payload).json()
 
     conn = sqlite3.connect(':memory:')
     c = conn.cursor()
-    c.execute("""CREATE TABLE test(
-                postId integer,
+    c.execute("""CREATE TABLE IF NOT EXISTS test(
+                postId integer primary key,
                 id integer,
                 name text,
                 email text,
